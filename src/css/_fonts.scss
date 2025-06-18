@@ -1,0 +1,37 @@
+// Inter
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+// PT Sans
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@mixin inter-regular {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+@mixin inter-medium {
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+@mixin sans-regular {
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+@mixin sans-bold {
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+
+@mixin font-12 {
+  font-size: 12px;
+}
+
+@mixin font-14 {
+  font-size: 14px;
+}
+
+@mixin font-16 {
+  font-size: 16px;
+}

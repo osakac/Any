@@ -1,0 +1,29 @@
+@use "../fonts" as *;
+@use "../colors" as *;
+
+.sidebar {
+  width: 280px;
+}
+
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    @include inter-regular;
+    @include font-16;
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  button {
+    @include inter-medium;
+    @include font-14;
+    padding: 15px 24px;
+    border-radius: 8px;
+    border: 1px solid $primary;
+  }
+}

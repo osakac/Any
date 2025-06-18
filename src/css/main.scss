@@ -1,1 +1,23 @@
+@use "fonts";
 @use "reset";
+
+@use "components/header";
+@use "components/sidebar";
+
+body {
+  background: rgba(255, 255, 255, 1);
+  font-size: 14px;
+  font-family: "PT Sans";
+}
+
+.container {
+  max-width: 1750px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+}
