@@ -1,0 +1,123 @@
+@use "../fonts" as *;
+@use "../colors" as *;
+
+.products__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  column-gap: 24px;
+  row-gap: 40px;
+
+  @media screen and (max-width: 850px) {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+  }
+  @media screen and (max-width: 650px) {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    cursor: pointer;
+
+    .product__image {
+      transition: all 0.2s ease;
+    }
+
+    &:hover .product__image {
+      transform: scale(1.2);
+    }
+
+    &:hover .product__title p {
+      color: #125bae;
+    }
+  }
+
+  .product__image-wrapper {
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f8fa;
+    border-radius: 5px;
+  }
+
+  .product__hot {
+    padding: 6px 8px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #f2f2f2;
+  }
+
+  .product__discount {
+    @include sans-bold;
+    padding: 6px 10px;
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: #7397f5;
+    border-radius: 4px;
+    color: white;
+
+    &::after {
+      content: "%";
+      margin-left: 1px;
+    }
+  }
+
+  .product__title {
+    h3 {
+      @include sans-regular;
+      @include font-14;
+      margin-bottom: 8px;
+      color: $secondary;
+    }
+
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #333;
+    }
+  }
+
+  .product__price-wrapper {
+    display: flex;
+    gap: 8px;
+  }
+
+  .product__price--old {
+    @include font-12;
+    color: $secondary;
+    text-decoration: line-through;
+  }
+
+  .product__buy-btn {
+    @include sans-bold;
+    @include font-14;
+    width: fit-content;
+    padding: 12px 16px;
+    color: #7397f5;
+    border: 1px solid #7397f5;
+    border-radius: 4px;
+
+    &--disabled {
+      width: 100%;
+      color: $secondary;
+      border-color: $secondary;
+    }
+  }
+}
+
+.product__item--disabled .product__image {
+  filter: grayscale(100%);
+}
