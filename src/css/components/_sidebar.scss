@@ -3,27 +3,146 @@
 
 .sidebar {
   width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  @media screen and (max-width: 1100px) {
+    display: none;
+  }
 }
 
-.sidebar__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.sidebar__categories {
+  @include sans-regular;
 
-  h1 {
-    @include inter-regular;
-    @include font-16;
-    padding-left: 24px;
+  a {
+    padding: 7px 16px 7px 8px;
     display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+
+    &:not(.sidebar__categories--active):hover {
+      background: #e2efff;
+    }
+  }
+
+  &--active {
+    background: $primary;
+    color: #fff;
+  }
+}
+
+.sidebar__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .brand__header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
+  }
+
+  h3 {
+    @include sans-bold;
+    @include font-16;
   }
 
   button {
-    @include inter-medium;
-    @include font-14;
-    padding: 15px 24px;
-    border-radius: 8px;
-    border: 1px solid $primary;
+    border: none;
+    text-decoration: underline;
+    color: $secondary;
+  }
+
+  input {
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid #d5d5d5;
+  }
+}
+
+.sidebar__list {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #cbcbcb;
+    border-radius: 10px;
+  }
+
+  label {
+    padding-right: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .checkmark {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .checkmark::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 7px;
+      top: 3px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    input:checked ~ .checkmark {
+      background: #7397f5;
+      border-color: #7397f5;
+    }
+
+    input:checked ~ .checkmark::after {
+      display: block;
+    }
+
+    span {
+      @include font-12;
+      color: #aaa;
+    }
+  }
+}
+
+.sidebar__size {
+  h3 {
+    @include sans-bold;
+    @include font-16;
+    text-align: center;
+    margin-bottom: 16px;
   }
 }
