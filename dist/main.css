@@ -66,7 +66,7 @@ ul {
   font-size: 14px;
   padding: 15px 24px;
   border-radius: 8px;
-  border: 1px solid #73aff4;
+  border: 1px solid #7397f5;
 }
 @media screen and (max-width: 1100px) {
   .header__logo-catalog {
@@ -84,7 +84,7 @@ ul {
   align-items: center;
   gap: 8px;
   border-radius: 8px;
-  border: 1px solid #73aff4;
+  border: 1px solid #7397f5;
   color: #5a5a5a;
 }
 .search input {
@@ -147,7 +147,7 @@ ul {
   background: #e2efff;
 }
 .sidebar__categories--active {
-  background: #73aff4;
+  background: #7397f5;
   color: #fff;
 }
 

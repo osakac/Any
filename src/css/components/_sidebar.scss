@@ -123,8 +123,8 @@
     }
 
     input:checked ~ .checkmark {
-      background: #7397f5;
-      border-color: #7397f5;
+      background: $primary;
+      border-color: $primary;
     }
 
     input:checked ~ .checkmark::after {
@@ -133,7 +133,7 @@
 
     span {
       @include font-12;
-      color: #aaa;
+      color: $secondary;
     }
   }
 }
