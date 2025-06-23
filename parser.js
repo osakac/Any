@@ -4,7 +4,7 @@ const $pageContent = document.querySelectorAll("._content");
 
 $pageContent.forEach((categoryContent) => {
   const products = categoryContent.querySelectorAll("[data-product-mini-card]");
-  products.forEach((product) => articles.push(product.dataset["productMiniCard"]));
+  products.forEach((product) => articles.push(+product.dataset["productMiniCard"]));
 });
 
 console.log(articles);
